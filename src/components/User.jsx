@@ -1,9 +1,16 @@
-export function User({ user: { name, email, id }, deleteUser }) {
+import css from './User.module.css';
+
+export function User({ user: { name, tel, id }, deleteUser }) {
   return (
-    <>
-      <p>Name:{name}</p>
-      <p>Email:{email}</p>
-      <button onClick={() => deleteUser(id)}>Delete</button>
-    </>
+    <div className={css.wrap}>
+      <p className={css.userAvatar}></p>
+      <div>
+        {name}: {tel}
+      </div>
+
+      <div>
+        <button onClick={() => deleteUser(id)}>Delete</button>
+      </div>
+    </div>
   );
 }

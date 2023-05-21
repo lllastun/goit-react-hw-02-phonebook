@@ -3,10 +3,12 @@ import ContactList from './ContactList';
 import Filter from './Filter';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import Contacts from './Contacts';
+import css from './App.module.css';
 
 export class App extends Component {
   state = {
-    contacts: [],
+    contacts: Contacts,
     filter: '',
   };
   addUser = userData => {
@@ -25,7 +27,8 @@ export class App extends Component {
     });
   };
   render() {
-    const { users } = this.state.contacts;
+    const { contacts } = this.state;
+    console.log({ contacts });
     return (
       <div
         style={{
@@ -44,8 +47,12 @@ export class App extends Component {
         <ContactForm addUser={this.addUser} />
 
         <h2>Contacts</h2>
-        <Filter />
-        <ContactList users={users} deleteUser={this.deleteUser} />
+        {/* <Filter /> */}
+        <ContactList
+          users={contacts}
+          deleteUser={this.deleteUser}
+          className={css.list}
+        />
       </div>
     );
   }

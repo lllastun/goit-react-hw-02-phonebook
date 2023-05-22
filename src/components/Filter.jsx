@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import css from './Filter.module.css';
 
 function Filter({ setFilter }) {
@@ -10,3 +10,7 @@ function Filter({ setFilter }) {
   );
 }
 export default Filter;
+
+Filter.propTypes = {
+  setFilter: PropTypes.func.isRequired,
+};

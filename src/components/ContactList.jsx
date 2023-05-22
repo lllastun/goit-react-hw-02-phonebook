@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { User } from './User';
 import css from './ContactList.module.css';
@@ -14,3 +14,8 @@ export default function ContactList({ users, deleteUser }) {
     );
   });
 }
+
+ContactList.propTypes = {
+  users: PropTypes.array.isRequired,
+  deleteUser: PropTypes.func.isRequired,
+};

@@ -18,7 +18,11 @@ export class App extends Component {
       ...userData,
     };
 
-    if (!this.state.contacts.some(contact => contact.name === newUser.name)) {
+    if (
+      !this.state.contacts.some(
+        contact => contact.name.toLowerCase() === newUser.name.toLowerCase()
+      )
+    ) {
       this.setState(prevState => {
         return { contacts: [...prevState.contacts, newUser] };
       });
@@ -54,9 +58,10 @@ export class App extends Component {
           flexDirection: 'column',
           width: '330px',
           margin: '0 auto',
-          border: 'solid 1px #777',
+          border: 'solid 2px #999',
           padding: '15px',
-          boxShadow: '1px 2px 1px 3px rgba(0, 0, 0, .2)',
+          boxShadow: '2px 2px 2px 3px rgba(0, 0, 0, .2)',
+          marginTop: '12px',
         }}
       >
         <h1>Phonebook</h1>

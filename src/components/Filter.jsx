@@ -4,7 +4,7 @@ import css from './Filter.module.css';
 function Filter({ setFilter }) {
   return (
     <div className={css.wrapFilter}>
-      <h2 className={css.h2}>Find contacts by name</h2>
+      <div className={css.p}>Find contacts by name</div>
       <input type="text" placeholder="Search" onChange={setFilter} />
     </div>
   );

@@ -4,3 +4,8 @@ form {
   width: 300px;
   font-size: 20px;
 }
+.addButton {
+  height: 30px;
+  font-size: 16px;
+  font-weight: 600;
+}

@@ -49,11 +49,14 @@ export class App extends Component {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          fontSize: 24,
+          fontSize: '24px',
           color: '#010101',
           flexDirection: 'column',
-          width: '300px',
+          width: '330px',
           margin: '0 auto',
+          border: 'solid 1px #777',
+          padding: '15px',
+          boxShadow: '1px 2px 1px 3px rgba(0, 0, 0, .2)',
         }}
       >
         <h1>Phonebook</h1>

@@ -2,12 +2,13 @@
 import React from 'react';
 import { User } from './User';
 import css from './ContactList.module.css';
+import { nanoid } from 'nanoid';
 
 export default function ContactList({ users, deleteUser }) {
-  console.log({ users });
+  // console.log({ users });
   return users.map(user => {
     return (
-      <div className={css.contactsList}>
+      <div className={css.contactsList} key={nanoid()}>
         <User user={user} key={user.id} deleteUser={deleteUser} />
       </div>
     );

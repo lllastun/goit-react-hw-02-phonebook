@@ -1,0 +1,8 @@
+h2 {
+  font-size: 16px;
+}
+.wrapFilter {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}

@@ -1,10 +1,12 @@
 // import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import css from './Filter.module.css';
 
-export default class Filter extends Component {
-  // static propTypes = { second: third };
-
-  render() {
-    return <div>Filter</div>;
-  }
+function Filter({ setFilter }) {
+  return (
+    <div className={css.wrapFilter}>
+      <h2 className={css.h2}>Find contacts by name</h2>
+      <input type="text" placeholder="Search" onChange={setFilter} />
+    </div>
+  );
 }
+export default Filter;

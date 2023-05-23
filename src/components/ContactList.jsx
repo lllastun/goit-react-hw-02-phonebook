@@ -5,7 +5,6 @@ import css from './ContactList.module.css';
 import { nanoid } from 'nanoid';
 
 export default function ContactList({ users, deleteUser }) {
-  // console.log({ users });
   return users.map(user => {
     return (
       <div className={css.contactsList} key={nanoid()}>

@@ -42,11 +42,15 @@ export class App extends Component {
     this.setState({ filter: filterData.target.value });
   };
 
-  render() {
-    const filteredContacts = this.state.contacts.filter(user =>
-      user.name.toLowerCase().includes(this.state.filter.toLocaleLowerCase())
-    );
+  filteredContacts = this.state.contacts.filter(user => {
+    const data = user.name
+      .toLowerCase()
+      .includes(this.state.filter.toLocaleLowerCase());
+    console.log(data);
+    return data;
+  });
 
+  render() {
     return (
       <div
         style={{
@@ -69,7 +73,7 @@ export class App extends Component {
         <h2>Contacts</h2>
         <Filter setFilter={this.setFilter} />
         <ContactList
-          users={filteredContacts}
+          users={this.filteredContacts}
           deleteUser={this.deleteUser}
           className={css.list}
         />

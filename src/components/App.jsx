@@ -1,9 +1,9 @@
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
+import ContactForm from './ContactForm/ContactForm';
+import ContactList from './ContactList/ContactList';
+import Filter from './Filter/Filter';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import CONTACTS from './Contacts';
+import CONTACTS from '../DataSet/Contacts';
 import css from './App.module.css';
 
 export class App extends Component {
@@ -42,13 +42,11 @@ export class App extends Component {
     this.setState({ filter: filterData.target.value });
   };
 
-  filteredContacts = this.state.contacts.filter(user => {
-    const data = user.name
-      .toLowerCase()
-      .includes(this.state.filter.toLocaleLowerCase());
-    console.log(data);
-    return data;
-  });
+  filteredContacts() {
+    return this.state.contacts.filter(user =>
+      user.name.toLowerCase().includes(this.state.filter.toLocaleLowerCase())
+    );
+  }
 
   render() {
     return (
@@ -73,7 +71,7 @@ export class App extends Component {
         <h2>Contacts</h2>
         <Filter setFilter={this.setFilter} />
         <ContactList
-          users={this.filteredContacts}
+          users={this.filteredContacts()}
           deleteUser={this.deleteUser}
           className={css.list}
         />
